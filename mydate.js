@@ -1,0 +1,10 @@
+var someDate = new Date(2014, 10, 2, 11, 30);
+console.log(someDate);
+console.log(someDate.getFullYear());
+console.log(someDate.getMonth());
+console.log(someDate.getDate());
+console.log(someDate.getDay());
+console.log(someDate.getHours());
+console.log(someDate.toString());
+console.log(someDate.toLocaleDateString());
+console.log(someDate.toLocaleTimeString());
