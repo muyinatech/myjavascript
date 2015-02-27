@@ -8,3 +8,5 @@ console.log(someDate.getHours());
 console.log(someDate.toString());
 console.log(someDate.toLocaleDateString());
 console.log(someDate.toLocaleTimeString());
+console.log(someDate.toUTCString());
+console.log(new Date());

@@ -6,39 +6,24 @@ console.log(null + 1);
 console.log(true + 1);
 console.log(false + 1);
 console.log(null == undefined);
-console.log("0" == 0);
-console.log(0 == false);
-console.log("0" == false);
-console.log("0" === 0); // no type conversion equality operator
+console.log("0" == 0); // string converted to integer
+console.log(0 == false); // integer is converted to boolean
+console.log("0" == false); // string is converted to boolean
+console.log("0" === 0); // false no type conversion equality operator
+console.log("0" !== 0); // true not equal as no type conversion equality operator
 
 // explicit type conversion
-console.log(typeof Number("3"));
-console.log(typeof String(false));
-console.log(typeof Object(3));
-console.log(typeof Number("3").toString());
+console.log("\nTYPEOF....")
+console.log(typeof true); // boolean
+console.log(typeof null); // object
+console.log(typeof Number("3")); // number
+console.log(typeof b) //undefined
+console.log(typeof String(false)); // string
+console.log(typeof Object(3)); // object
+console.log(typeof Number("3").toString()); // string
+console.log(typeof (1 + "")); // string
 
-console.log(typeof (1 + ""));
-
-// undefined
 var x;
-console.log(typeof x);
+console.log(typeof x); // undefined
 x = null;
-console.log(typeof x);
-
-var scope = "global";
-function checkscope() {
-	var scope = "local";
-	return scope;
-}
-console.log(checkscope());
-
-var scope = "global";
-function checkscope2() {
-	var scope = "local";
-	function nested() {
-		var scope = "nested scope";
-		return scope;
-	}
-	return nested();
-}
-console.log(checkscope2());
+console.log(typeof x); // object
