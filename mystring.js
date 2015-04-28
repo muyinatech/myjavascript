@@ -13,6 +13,9 @@ console.log(a.indexOf("e"));
 console.log(a.replace("value", "newvalue"));
 console.log(b[2]);
 console.log(b[b.length-2]);
+var s = "hello";
+console.log(s.concat(" world"));
+console.log(s.toUpperCase());
 
 var num = 10;
 console.log(num.toString()); // "10"
