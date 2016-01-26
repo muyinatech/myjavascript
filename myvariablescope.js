@@ -5,7 +5,6 @@ function checkscope() {
 }
 console.log(checkscope());
 
-var scope = "global";
 function checkscope2() {
 	var scope = "local";
 	function nested() {
