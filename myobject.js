@@ -1,3 +1,23 @@
+var foo = {};
+console.log(foo);
+foo.bar = 123; // extend foo
+console.log(foo); // { bar: 123 }
+
+//alternative
+var foo = {
+	bar: 123, 
+	bas: {
+		bas1: 'some string',
+		bas2: 345
+	}, // nested object
+	bat: [1,2,3], // array
+	bay: [{qux:1}, {qux:2}, {qux:3}] //array containing object literals
+};
+console.log(foo);
+console.log("foo.bar: " + foo.bar);
+console.log("foo.bas.bas2: " + foo.bas.bas2);
+console.log("foo.bat[2]: " + foo.bat[2]);
+
 var person = {
 	name: "Nicholas",
 	age: 29,
@@ -7,7 +27,7 @@ var person = {
 		console.log(this.name);
 	}
 
-}
+};
 
 Object.defineProperty(person, "location", {
 	writable:false,
