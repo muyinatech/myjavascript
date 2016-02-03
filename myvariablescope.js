@@ -3,7 +3,7 @@ function checkscope() {
 	var scope = "local";
 	return scope;
 }
-console.log(checkscope());
+console.log("check scope: " + checkscope());
 
 function checkscope2() {
 	var scope = "local";

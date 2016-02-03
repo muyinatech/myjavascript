@@ -5,7 +5,7 @@ var aString = "hello";
 console.log(typeof aString);
 
 var aBoolean = true;
-console.log(typeof true);
+console.log(typeof aBoolean);
 
 var aVariable;
 console.log(typeof aVariable);
@@ -56,5 +56,45 @@ console.log(parseFloat("1234blue")); // 1234
 console.log(parseFloat("22.5")); // 2.5
 console.log(parseFloat("22.34.4")); // 22.34
 console.log(parseFloat("0944.4")); // 944.4
-console.log(parseFloat("3.125e7)); // 31250000
+console.log(parseFloat("3.125e7")); // 31250000
+
+var s1 = "01";
+var s2 = "1.1";
+var s3 = "z";
+var b = false;
+var f = 1.1;
+var o = {
+	valueOf: function() {
+		return -1;
+	}
+};
+
+// unary + operator on a non-numeric performs numeric conversion
+console.log("*** + conversion ***");
+console.log(+s1); // 1
+console.log(+s2); // 1.1
+console.log(+s3); // NaN
+console.log(+b); // numeric 0
+console.log(+f); // 1.1
+console.log(+o); // -1
+
+console.log("*** 1- conversion ***");
+console.log(-s1); // -1
+console.log(-s2); // -1.1
+console.log(-s3); // NaN
+console.log(-b); // numeric 0
+console.log(-f); // -1.1
+console.log(-o); // 1
+
+
+// parseInt is recommended over Number() function
+var num1 = Number("Hello world!");
+var num2 = Number("");
+var num3 = Number("000011");
+var num4 = Number(true);
+console.log("*** Number() conversion ***");
+console.log(num1); // NaN
+console.log(num2); // 0
+console.log(num3); // 11
+console.log(num4); // 1
 
