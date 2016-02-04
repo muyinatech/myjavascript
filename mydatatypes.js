@@ -98,3 +98,9 @@ console.log(num2); // 0
 console.log(num3); // 11
 console.log(num4); // 1
 
+
+// instanceof to check reference type, where typeOf is useful for primitives
+var o = new Object();
+console.log(o instanceof Object);
+var a = ["red", "blue", "green"];
+console.log(a instanceof Array);
