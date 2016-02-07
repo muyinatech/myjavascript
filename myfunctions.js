@@ -39,13 +39,13 @@ var foo2 = function() {
 foo2();
 
 var anotherSum = sum; // obtain pointer to sum function
-console.log("anotherSum: " +anotherSum(10, 10));
+console.log("anotherSum: " + anotherSum(10, 10) + "\n");
 
 // get number of function arguments
 function howManyArgs() {
-	console.log(arguments.length);
+	console.log("no. of args: " + arguments.length);
 	if (arguments.length > 0) {
-		console.log(arguments[0]);
+		console.log("first arg: " + arguments[0]);
 	}
 }
 howManyArgs();
@@ -53,11 +53,11 @@ howManyArgs(2,45,67);
 console.log("\n");
 
 function howManyArgs2(num1) {
-	console.log(num1);
-	console.log(arguments.length);
+	console.log("first arg: " + num1);
+	console.log("no. of args: " + arguments.length);
 	if (arguments.length > 0) {
-		console.log(num1);
-		console.log(arguments[1]);
+		console.log("num: " + num1);
+		console.log("second arg: " + arguments[1]);
 	}
 }
 howManyArgs2();

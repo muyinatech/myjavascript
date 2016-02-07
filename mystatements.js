@@ -1,3 +1,4 @@
+// if statement
 var i = 100;
 if (i > 1000) {
 	console.log("Greater than 1000");
@@ -7,21 +8,25 @@ if (i > 1000) {
 	console.log("?");
 }
 
+// do while
 i = 0;
 do {
 	i += 2;
 } while(i < 10);
 
+// while
 i = 0;
 while (i < 10) {
 	i += 2;
 }
 
+// for
 var count = 10;
 for (var i = 0; i < count; i++) {
 	console.log(i);
 }
 
+// for in
 var a = new Object();
 a.name = "Test";
 a.value = 100;
@@ -30,6 +35,7 @@ for(var propName in a ) {
 	console.log(propName);
 }
 
+// switch
 var i = 30;
 switch(i) {
 	case 25:

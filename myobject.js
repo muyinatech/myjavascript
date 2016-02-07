@@ -1,7 +1,8 @@
 var foo = {};
 console.log(foo);
 foo.bar = 123; // extend foo
-console.log(foo); // { bar: 123 }
+console.log(foo); // { bar: 123 } calls toString()
+console.log(foo.hasOwnProperty("bar")); // check if property exists on object
 
 //alternative
 var foo = {
