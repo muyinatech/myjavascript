@@ -17,6 +17,13 @@ var s = "hello";
 console.log(s.concat(" world"));
 console.log(s.toUpperCase());
 
+var str = "Apple, Banana, Kiwi";
+console.log("slice: " + str.slice(7,13));
+
+var txt = "a,b,c,d,e";   
+var letters = txt.split(","); // split string into an array
+console.log(letters);
+
 // Convert number to string
 var num = 10;
 console.log(num.toString()); // "10" base 10
