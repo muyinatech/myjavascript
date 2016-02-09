@@ -14,4 +14,17 @@ console.log("message3:" + message3); // visible outside of the scope of the func
 var message4 = null;
 console.log("message4:" + message4); // null
 
+
 //console.log(message5); // causes a not defined error
+
+var num1 = 4;
+var num2 = num1;
+num1++;
+console.log(num1); // 5
+console.log(num2); // 4
+
+var object1 = new Object();
+object1.name = "test";
+var object2 = object1;
+object2.name = "new test";
+console.log(object1.name);

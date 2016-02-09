@@ -6,7 +6,7 @@ console.log(bar()); // undefined
 
 var foo = 123;
 if (true) {
-	var foo = 456;
+	var foo = 456; // added to the global context
 }
 console.log(foo); // 456
 

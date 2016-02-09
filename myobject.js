@@ -1,8 +1,15 @@
-var foo = {};
+var obj1 = new Object();
+obj1.name = "test";
+
+var foo = {}; // same as new Object();
 console.log(foo);
 foo.bar = 123; // extend foo
 console.log(foo); // { bar: 123 } calls toString()
 console.log(foo.hasOwnProperty("bar")); // check if property exists on object
+console.log(foo.bar); // dot notation preferred
+console.log(foo["bar"]); // bracket notation
+var propName = "bar";
+console.log(foo[propName]);
 
 //alternative
 var foo = {
@@ -105,3 +112,17 @@ var descriptor = Object.getOwnPropertyDescriptor(book, "_title");
 console.log(descriptor.value);
 console.log(descriptor.configurable);
 console.log(typeof descriptor.get);
+
+function displayInfo(args) {
+	if (args.age > 25) {
+		console.log("old");
+	} else {
+		console.log("young");
+	}
+}
+
+// pass object literal as a function argument
+displayInfo({
+	"name":"Fred",
+	"age":"16"
+});

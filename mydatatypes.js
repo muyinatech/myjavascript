@@ -88,6 +88,8 @@ var o = new Object();
 console.log(o instanceof Object);
 var a = ["red", "blue", "green"];
 console.log(a instanceof Array);
+console.log(a instanceof Object); // true also as all reference types are instances of Object
+console.log(1 instanceof Object); // false primitives are not Object
 
 console.log("\n**** automatic type conversion ****");
 console.log(10 + " objects"); // string
