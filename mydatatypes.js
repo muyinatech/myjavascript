@@ -1,57 +1,5 @@
 // Simple Data Types - Undefined, Null, Boolean, Number, String
 // Complex Data Type - Object
-console.log("**** typeof ****")
-var aString = "hello";
-console.log("typeof aString: " + typeof(aString)); // string
-
-var aBoolean = true;
-console.log(typeof aBoolean); // boolean
-
-console.log(typeof 100); // number
-
-var aVariable;
-console.log(typeof aVariable); // undefined
-
-console.log(typeof aVariable2); // undefined even though aVariable2 has not be declared
-
-var aVariable3 = null; // recommended to declare a variable to null, if is to hold an object later, instead of leaving undefined
-aVariable3 = new Object();
-
-console.log(typeof new Object()); // object
-
-console.log(typeof null); // object, as it considered to be an empty object
-
-console.log(typeof function(){}); // function
-
-console.log(typeof (1 + "")); // string
-
-console.log("\n**** Boolean Conversion ****");
-aBoolean = Boolean(""); // empty string is false
-console.log(aBoolean == false); //true
-
-aBoolean = Boolean("blah"); // non empty string is true
-console.log(aBoolean == true); // true
-
-aBoolean = Boolean(0); // zero is false
-console.log(aBoolean == false); // true
-
-aBoolean = Boolean(5); // > 0 is true
-console.log(aBoolean == true); // true
-
-aBoolean = Boolean(null); // null is false
-console.log(aBoolean == false); // true
-
-aBoolean = Boolean(undefined); // undefined is false
-console.log(aBoolean == false); // true
-
-aBoolean = Boolean(new Object()); // object is true
-console.log(aBoolean == true); // true
-
-var someString = "test";
-if (someString) { // string converted to boolean true
-	console.log("test is boolean true");
-}
-
 
 var s1 = "01";
 var s2 = "1.1";

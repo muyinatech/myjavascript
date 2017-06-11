@@ -1,3 +1,4 @@
+// rarely used
 var obj1 = new Object();
 obj1.name = "test";
 
@@ -11,7 +12,7 @@ console.log(foo["bar"]); // bracket notation
 var propName = "bar";
 console.log(foo[propName]);
 
-//alternative
+// preferred
 var foo = {
 	bar: 123, 
 	bas: {
@@ -19,12 +20,29 @@ var foo = {
 		bas2: 345
 	}, // nested object
 	bat: [1,2,3], // array
-	bay: [{qux:1}, {qux:2}, {qux:3}] //array containing object literals
+	bay: [{qux:1}, {qux:2}, {qux:3}], //array containing object literals
+	baz: function() {
+	  return 1;
+	}
 };
 console.log(foo);
 console.log("foo.bar: " + foo.bar);
 console.log("foo.bas.bas2: " + foo.bas.bas2);
 console.log("foo.bat[2]: " + foo.bat[2]);
+console.log("foo.baz: " + foo.baz());
+
+// object constructor function
+function customer(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+var myFather = new customer("John", "Doe", 50, "blue");
+
+// delete property
+delete myFather.firstName
 
 var person = {
 	name: "Nicholas",

@@ -4,17 +4,18 @@ var array3 = new Array("one", "two", "three");
 var array4 = ["red", "blue", "green"]; // using an array literal
 var array5 = []; // empty array
 var array6 = [2, "test", {a:1}]; // array can contain mixed types
-console.log(array1.length);
-console.log(array3.length);
+
+console.log("array1.length: " + array1.length);
+console.log("array3.length: " + array3.length);
 console.log("sorted: " + array4.sort());
 console.log("reverse: " + array4.reverse());
 
-console.log(array3);
+console.log("array3: " + array3);
 array3.length = 2; // modify array to have two items
-console.log(array3);
+console.log("array3: " + array3);
 array3.length = 6;
 array3[5] = 100;
-console.log(array3); // modify array to have six items
+console.log("array3: " + array3); // modify array to have six items
 
 // check if an array preferred
 if (Array.isArray(array1)) {
@@ -97,6 +98,6 @@ values.forEach(function(item, index, array) {
 });
 
 var sum = values.reduce(function(prev, cur, index, array) {
-	return prev + next;
+	return prev + cur;
 });
 console.log(sum);

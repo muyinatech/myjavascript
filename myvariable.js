@@ -4,6 +4,7 @@ console.log("message:" + message);
 var message2;
 console.log("message2:" + message2); // undefined
 
+// global variable
 function test() {
 	message3 = "hi"; // omitting var makes it a global variable not recommended
 }
@@ -23,7 +24,7 @@ num1++;
 console.log(num1); // 5
 console.log(num2); // 4
 
-var object1 = new Object();
+var object1 = {};
 object1.name = "test";
 var object2 = object1;
 object2.name = "new test";
