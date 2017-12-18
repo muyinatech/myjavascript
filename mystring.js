@@ -2,24 +2,33 @@ var a = 'name="value"';
 var b = "name='value2'";
 console.log(a);
 console.log(b);
-console.log("length:" + a.length);
 
 console.log("two\nlines");
 console.log("this \"is\" now");
+console.log("It\'s alright");
+console.log("Store \\");
 console.log("Hello, " + "world");
-console.log(a.charAt(3));
-console.log(a.substring(2,4));
+
+console.log("length: " + a.length);
+console.log("charAt: " + a.charAt(3));
+console.log("substring: " + a.substring(2,4));
+console.log("substr: " + a.substr(3,3));
 console.log(a.indexOf("e"));
+console.log(a.indexOf("ue"));
 console.log(a.replace("value", "newvalue"));
 console.log(b[2]);
 console.log(b[b.length-2]);
+
+// concat a string
 var s = "hello";
 console.log(s.concat(" world"));
 console.log(s.toUpperCase());
 
+// slice a string
 var str = "Apple, Banana, Kiwi";
 console.log("slice: " + str.slice(7,13));
 
+// split a string
 var txt = "a,b,c,d,e";   
 var letters = txt.split(","); // split string into an array
 console.log(letters);

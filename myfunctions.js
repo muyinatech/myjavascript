@@ -1,7 +1,7 @@
 function foo() {return 123; }
 console.log(foo()); // 123
 
-function bar() { }
+function bar() { } // no return value
 console.log(bar()); // undefined
 
 var foo = 123;
@@ -26,6 +26,10 @@ function sum(num1, num2) { // FUNCTION DECLARATION
 }
 console.log("sum: " + sum(15, 57));
 
+// obtain pointer to sum function
+var anotherSum = sum;
+console.log("anotherSum: " + anotherSum(10, 10) + "\n");
+
 // another way to declare a function
 var sum2 = function(num1, num2) { // FUNCTION EXPRESSION, anonymous function, only executed until this code is reached
 	return num1 + num2;
@@ -37,8 +41,7 @@ var foo2 = function() {
 }
 foo2();
 
-var anotherSum = sum; // obtain pointer to sum function
-console.log("anotherSum: " + anotherSum(10, 10) + "\n");
+
 
 // get number of function arguments
 function howManyArgs() {
