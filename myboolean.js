@@ -1,7 +1,7 @@
-aBoolean = Boolean(""); // empty string is false
+aBoolean = Boolean(''); // empty string is false
 console.log(aBoolean == false); // true
 
-aBoolean = Boolean("blah"); // non empty string is true
+aBoolean = Boolean('blah'); // non empty string is true
 console.log(aBoolean == true); // true
 
 aBoolean = Boolean(0); // zero is false
@@ -19,7 +19,7 @@ console.log(aBoolean == false); // true
 aBoolean = Boolean(new Object()); // object is true
 console.log(aBoolean == true); // true
 
-var someString = "test";
+const someString = 'test';
 if (someString) { // string converted to boolean true
-	console.log("test is boolean true");
+  console.log('test is boolean true');
 }

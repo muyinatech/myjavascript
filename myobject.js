@@ -1,35 +1,35 @@
 // rarely used
-var obj1 = new Object();
-obj1.name = "test";
+const obj1 = new Object();
+obj1.name = 'test';
 
 var foo = {}; // same as new Object();
 console.log(foo);
 foo.bar = 123; // extend foo
 console.log(foo); // { bar: 123 } calls toString()
-console.log(foo.hasOwnProperty("bar")); // check if property exists on object
+console.log(foo.hasOwnProperty('bar')); // check if property exists on object
 console.log(foo.bar); // dot notation preferred
-console.log(foo["bar"]); // bracket notation
-var propName = "bar";
+console.log(foo.bar); // bracket notation
+const propName = 'bar';
 console.log(foo[propName]);
 
 // preferred
 var foo = {
-	bar: 123, 
-	bas: {
-		bas1: 'some string',
-		bas2: 345
-	}, // nested object
-	bat: [1,2,3], // array
-	bay: [{qux:1}, {qux:2}, {qux:3}], //array containing object literals
-	baz: function() {
+  bar: 123,
+  bas: {
+    bas1: 'some string',
+    bas2: 345,
+  }, // nested object
+  bat: [1, 2, 3], // array
+  bay: [{ qux: 1 }, { qux: 2 }, { qux: 3 }], // array containing object literals
+  baz() {
 	  return 1;
-	}
+  },
 };
 console.log(foo);
-console.log("foo.bar: " + foo.bar);
-console.log("foo.bas.bas2: " + foo.bas.bas2);
-console.log("foo.bat[2]: " + foo.bat[2]);
-console.log("foo.baz: " + foo.baz());
+console.log(`foo.bar: ${foo.bar}`);
+console.log(`foo.bas.bas2: ${foo.bas.bas2}`);
+console.log(`foo.bat[2]: ${foo.bat[2]}`);
+console.log(`foo.baz: ${foo.baz()}`);
 
 // object constructor function
 function customer(first, last, age, eye) {
@@ -39,30 +39,30 @@ function customer(first, last, age, eye) {
   this.eyeColor = eye;
 }
 
-var myFather = new customer("John", "Doe", 50, "blue");
+const myFather = new customer('John', 'Doe', 50, 'blue');
 
 // delete property
-delete myFather.firstName
+delete myFather.firstName;
 
-var person = {
-	name: "Nicholas",
-	age: 29,
-	job: "Software Engineer",
+const person = {
+  name: 'Nicholas',
+  age: 29,
+  job: 'Software Engineer',
 
-	sayName: function() {
-		console.log(this.name);
-	}
+  sayName() {
+    console.log(this.name);
+  },
 
 };
 
-Object.defineProperty(person, "location", {
-	writable:false,
-	configurable:false,
-	value: "London"
+Object.defineProperty(person, 'location', {
+  writable: false,
+  configurable: false,
+  value: 'London',
 });
 
 // not updated to new york as location property is read only
-person.location = "New York";
+person.location = 'New York';
 
 console.log(person.location);
 
@@ -71,76 +71,88 @@ delete person.location;
 
 console.log(person.location);
 
-var book = {
-	_year:2004, //underscore indicates that a property is not intended to be accessed from outside of the object's methods.
-	edition: 1,
-	_ref:null
+const book = {
+  _year: 2004, // underscore indicates that a property is not intended to be accessed from outside of the object's methods.
+  edition: 1,
+  _ref: null,
 };
 
-Object.defineProperty(book, "year", {
-	get:function() {
-		return this._year;
-	},
-	set:function(newValue){
-		if(newValue > 2004) {
-			this._year = newValue;
-			this.edition += newValue - 2004;
-		}
-	}
+Object.defineProperty(book, 'year', {
+  get() {
+    return this._year;
+  },
+  set(newValue) {
+    if (newValue > 2004) {
+      this._year = newValue;
+      this.edition += newValue - 2004;
+    }
+  },
 });
 
 
 // object with setter only
-Object.defineProperty(book, "ref", {
-	set:function(newValue){
-		this._ref = newValue;
-	}
+Object.defineProperty(book, 'ref', {
+  set(newValue) {
+    this._ref = newValue;
+  },
 });
 
 book.year = 2005;
 console.log(book.edition);
-book.ref = "ABC";
+book.ref = 'ABC';
 console.log(book.ref);
 
 
 // Added multiple properties to an object
 Object.defineProperties(book, {
-	_title: {
-		value: "Book 1"
-	},
+  _title: {
+    value: 'Book 1',
+  },
 
-	price: {
-		value: 10.99
-	},
-	
-	title: {
-		get: function(){
-			return this._title;
-		},
+  price: {
+    value: 10.99,
+  },
 
-		set: function(newValue){
-			this._title = newValue;
-		}
-	}	
+  title: {
+    get() {
+      return this._title;
+    },
+
+    set(newValue) {
+      this._title = newValue;
+    },
+  },
 });
 
 console.log(book.title);
 
-var descriptor = Object.getOwnPropertyDescriptor(book, "_title");
+const descriptor = Object.getOwnPropertyDescriptor(book, '_title');
 console.log(descriptor.value);
 console.log(descriptor.configurable);
 console.log(typeof descriptor.get);
 
 function displayInfo(args) {
-	if (args.age > 25) {
-		console.log("old");
-	} else {
-		console.log("young");
-	}
+  if (args.age > 25) {
+    console.log('old');
+  } else {
+    console.log('young');
+  }
 }
 
 // pass object literal as a function argument
 displayInfo({
-	"name":"Fred",
-	"age":"16"
+  name: 'Fred',
+  age: '16',
 });
+
+const p = { x: 1, y: 1 };
+'x' in p;
+'z' in p;
+'toString' in p;
+
+console.log(`"x" in p:${'x' in p}`);
+console.log(`"z" in p:${'z' in p}`);
+
+const a = [7, 8, 9];
+console.log(`"0" in a${'0' in a}`);
+console.log(`1 in a${1 in a}`);
