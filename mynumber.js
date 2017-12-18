@@ -1,6 +1,6 @@
 // Number Type represents both integers and floating point numbers
 var intNumber = 55; // integer
-var octalNumber = 070;
+// var octalNumber = 070;
 var hexNumber = 0x1F;
 var floatNumber = 1.1;
 var floatNumber2 = 1.0; // is intepreted as integer 1

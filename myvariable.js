@@ -12,20 +12,23 @@ test();
 
 console.log("message3:" + message3); // visible outside of the scope of the function
 
-var message4 = null;
+const message4 = null;
 console.log("message4:" + message4); // null
 
 
 //console.log(message5); // causes a not defined error
 
-var num1 = 4;
-var num2 = num1;
+let num1 = 4;
+const num2 = num1;
 num1++;
 console.log(num1); // 5
 console.log(num2); // 4
 
-var object1 = {};
+const object1 = new Object();
 object1.name = "test";
-var object2 = object1;
+const object2 = object1;
 object2.name = "new test";
 console.log(object1.name);
+
+const p = {x:1, y:1};
+console.log(`x in p ${"x" in p}`);
