@@ -1,11 +1,11 @@
 // Number Type represents both integers and floating point numbers
-const intNumber = 55; // integer
-// var octalNumber = 070;
-const hexNumber = 0x1F;
-const floatNumber = 1.1;
-const floatNumber2 = 1.0; // is intepreted as integer 1
-const floatNumber3 = 3.142e7; // 31420000
-console.log((0.1 + 0.2) == 0.3); // false never test for specific floating point numbers
+// const intNumber = 55; // integer
+// const octalNumber = 070;
+// const hexNumber = 0x1F;
+// const floatNumber = 1.1;
+// const floatNumber2 = 1.0; // is intepreted as integer 1
+// const floatNumber3 = 3.142e7; // 31420000
+console.log((0.1 + 0.2) === 0.3); // false never test for specific floating point numbers
 console.log(12 / 0);
 
 console.log('\n**** isNan ****');
@@ -34,10 +34,10 @@ console.log(num7); // NaN
 
 // parseInt used for converting strings to integer numbers
 console.log('\n**** Integer Conversion ****');
-console.log(parseInt('1234blue')); // 1234
-console.log(parseInt(22.5)); // 22
-console.log(parseInt('')); // NaN
-console.log(parseInt('0xA')); // 10
+console.log(parseInt('1234blue'), 10); // 1234
+console.log(parseInt(22.5), 10); // 22
+console.log(parseInt(''), 10); // NaN
+console.log(parseInt('0xA'), 10); // 10
 console.log(parseInt('0xAF', 16)); // 175 using radix 16 for hexadecimal
 console.log(0xAF); // 175 using radix 16 for hexadecimal, 0x can be omitted
 console.log(0b10); // 2 parsed as binary

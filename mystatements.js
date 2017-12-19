@@ -1,5 +1,5 @@
 // if statement
-var i = 100;
+let i = 100;
 if (i > 1000) {
   console.log('Greater than 1000');
 } else if (i > 40) {
@@ -22,21 +22,23 @@ while (i < 10) {
 
 // for
 const count = 10;
-for (var i = 0; i < count; i++) {
-  console.log(i);
+for (let j = 0; j < count; j += 1) {
+  console.log(j);
 }
 
 // for in
-const a = new Object();
+const a = {};
 a.name = 'Test';
 a.value = 100;
 
 for (const propName in a) {
-  console.log(propName);
+  if (Object.prototype.hasOwnProperty.call(a, propName)) {
+    console.log(propName);
+  }
 }
 
 // switch
-var i = 30;
+i = 30;
 switch (i) {
   case 25:
     console.log('25');

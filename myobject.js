@@ -1,8 +1,8 @@
 // rarely used
-const obj1 = new Object();
+const obj1 = {};
 obj1.name = 'test';
 
-var foo = {}; // same as new Object();
+let foo = {}; // same as new Object();
 console.log(foo);
 foo.bar = 123; // extend foo
 console.log(foo); // { bar: 123 } calls toString()
@@ -13,7 +13,7 @@ const propName = 'bar';
 console.log(foo[propName]);
 
 // preferred
-var foo = {
+foo = {
   bar: 123,
   bas: {
     bas1: 'some string',
@@ -72,18 +72,18 @@ delete person.location;
 console.log(person.location);
 
 const book = {
-  _year: 2004, // underscore indicates that a property is not intended to be accessed from outside of the object's methods.
+  year: 2004,
   edition: 1,
-  _ref: null,
+  ref: null,
 };
 
-Object.defineProperty(book, 'year', {
+Object.defineProperty(book, 'ayear', {
   get() {
-    return this._year;
+    return this.year;
   },
   set(newValue) {
     if (newValue > 2004) {
-      this._year = newValue;
+      this.year = newValue;
       this.edition += newValue - 2004;
     }
   },
@@ -93,7 +93,7 @@ Object.defineProperty(book, 'year', {
 // object with setter only
 Object.defineProperty(book, 'ref', {
   set(newValue) {
-    this._ref = newValue;
+    this.ref = newValue;
   },
 });
 
@@ -105,7 +105,7 @@ console.log(book.ref);
 
 // Added multiple properties to an object
 Object.defineProperties(book, {
-  _title: {
+  ptitle: {
     value: 'Book 1',
   },
 
@@ -115,11 +115,11 @@ Object.defineProperties(book, {
 
   title: {
     get() {
-      return this._title;
+      return this.ptitle;
     },
 
     set(newValue) {
-      this._title = newValue;
+      this.ptitle = newValue;
     },
   },
 });

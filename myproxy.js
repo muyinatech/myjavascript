@@ -1,4 +1,5 @@
-// The Proxy object defines a target (an empty object here) and a handler object in which a get trap is implemented.
+// The Proxy object defines a target (an empty object here) and a handler object
+// in which a get trap is implemented.
 // Here, an object that is proxied will not return undefined when getting undefined properties,
 // but will instead return the number 42.
 
@@ -26,7 +27,7 @@ console.log(proxy.foo); // "[[foo]]"
 
 revocable.revoke();
 
-console.log(proxy.foo); // TypeError is thrown
-proxy.foo = 1; // TypeError again
-delete proxy.foo; // still TypeError
+// console.log(proxy.foo); // TypeError is thrown
+// proxy.foo = 1; // TypeError again
+// delete proxy.foo; // still TypeError
 typeof proxy; // "object", typeof doesn't trigger any trap
