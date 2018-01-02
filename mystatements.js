@@ -52,3 +52,18 @@ switch (i) {
   default:
     console.log('other');
 }
+
+const o = {x: 2};
+const p = null;
+console.log(o && o.x); // 2 truthy so returns right operand value
+console.log(p && p.x); // null falsy so return left operand value
+
+console.log(o || o.x); // o truthy so returns left operand value
+console.log(p || 100); // 100 falsy so return right operand value
+
+console.log(`eval("3+2"): ${eval("3+2")}`); // evaluate an expression
+
+//comma operator
+for (let i=0, j=10; i < j; i++, j--) {
+  console.log(i+j);
+}

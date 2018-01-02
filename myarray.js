@@ -53,6 +53,8 @@ console.log(`colors: ${colors}`);
 console.log(`count2: ${count2}`);
 
 let values = [0, 1, 5, 10, 15];
+delete values[2]; // delete item at index 2
+console.log(`delete values[2]: ${values}`); // 0, 1, 10, 15, 5  sorts by String value
 console.log(`values: ${values.sort()}`); // 0, 1, 10, 15, 5  sorts by String value
 
 function compare(val1, val2) {
@@ -99,7 +101,7 @@ const doubleArray = values.map((item, index, array) => // double every item in t
 console.log(`values: ${values}`);
 console.log(`doubleArray: ${doubleArray}`);
 
-values.forEach((item, index, array) => {
+values.forEach((item) => {
   console.log(item);
 });
 

@@ -6,7 +6,7 @@ const s2 = '1.1';
 const s3 = 'z';
 const b = false;
 const f = 1.1;
-var o = {
+let g = {
   valueOf() {
     return -1;
   },
@@ -19,7 +19,7 @@ console.log(+s2); // 1.1
 console.log(+s3); // NaN
 console.log(+b); // numeric 0
 console.log(+f); // 1.1
-console.log(+o); // -1
+console.log(+g); // -1
 
 console.log('\n**** - conversion ****');
 console.log(-s1); // -1
@@ -27,12 +27,12 @@ console.log(-s2); // -1.1
 console.log(-s3); // NaN
 console.log(-b); // numeric 0
 console.log(-f); // -1.1
-console.log(-o); // 1
+console.log(-g); // 1
 
 
 // instanceof to check reference type, where typeOf is useful for primitives
 console.log('\n**** instanceof conversion ****');
-var o = new Object();
+let o = {};
 console.log(o instanceof Object);
 const a = ['red', 'blue', 'green'];
 console.log(a instanceof Array);
