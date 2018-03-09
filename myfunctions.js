@@ -4,18 +4,19 @@ console.log(foo()); // 123
 function bar() { } // no return value
 console.log(bar()); // undefined
 
-var foo = 123;
+let foo = 123;
 if (true) {
   var foo = 456; // added to the global context
 }
 console.log(foo); // 456
 
-var foo = 123;
-if (true) {
-  (function () { // create new scope, by wrapping function in (...), means it is immediately executed after you define it.
-    const foo = 456;
-  }());
-}
+let foo = 123;
+
+(function () { // create new scope, by wrapping function in (...), means it is immediately executed after you define it.
+  const foo = 456;
+  console.log(foo); // 456
+}());
+
 console.log(foo); // 123
 
 console.log(`sum: ${sum(1, 2)}`); // this can appear before function declaration below
