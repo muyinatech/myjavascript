@@ -19,7 +19,7 @@ console.log(`pattern2: ${value.match(pattern2)}`);
 console.log(`pattern3: ${value.match(pattern3)}`);
 console.log(`pattern4: ${value.match(pattern4)}`);
 console.log(`pattern5: ${value.match(pattern5)}`);
-
+console.log(`pattern6: ${value.match(pattern6)}`);
 
 console.log(pattern1.global); // true
 console.log(pattern1.ignoreCase); // false

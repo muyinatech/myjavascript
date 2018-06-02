@@ -10,10 +10,11 @@ console.log(`typeof aVariable: ${typeof aVariable}`); // undefined
 
 console.log(`typeof aVariable2: ${typeof aVariable2}`); // undefined even though aVariable2 has not be declared
 
-let aVariable3 = null; // recommended to declare a variable to null, if is to hold an object later, instead of leaving undefined
-aVariable3 = new Object();
+let aVariable3 = null; // recommended to declare a variable to null,
+// if is to hold an object later, instead of leaving undefined
+aVariable3 = {};
 
-console.log(`typeof new Object(): ${typeof new Object()}`); // object
+console.log(`typeof new Object(): ${typeof aVariable3}`); // object
 
 console.log(`typeof null: ${typeof null}`); // object, as it considered to be an empty object
 

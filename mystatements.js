@@ -1,5 +1,5 @@
 // if statement
-var i = 100;
+let i = 100;
 if (i > 1000) {
   console.log('Greater than 1000');
 } else if (i > 40) {
@@ -22,21 +22,23 @@ while (i < 10) {
 
 // for
 const count = 10;
-for (var i = 0; i < count; i++) {
-  console.log(i);
+for (let j = 0; j < count; j += 1) {
+  console.log(j);
 }
 
 // for in
-const a = new Object();
+const a = {};
 a.name = 'Test';
 a.value = 100;
 
 for (const propName in a) {
-  console.log(propName);
+  if (Object.prototype.hasOwnProperty.call(a, propName)) {
+    console.log(propName);
+  }
 }
 
 // switch
-var i = 30;
+i = 30;
 switch (i) {
   case 25:
     console.log('25');
@@ -49,4 +51,19 @@ switch (i) {
     break;
   default:
     console.log('other');
+}
+
+const o = {x: 2};
+const p = null;
+console.log(o && o.x); // 2 truthy so returns right operand value
+console.log(p && p.x); // null falsy so return left operand value
+
+console.log(o || o.x); // o truthy so returns left operand value
+console.log(p || 100); // 100 falsy so return right operand value
+
+console.log(`eval("3+2"): ${eval("3+2")}`); // evaluate an expression
+
+//comma operator
+for (let i=0, j=10; i < j; i++, j--) {
+  console.log(i+j);
 }

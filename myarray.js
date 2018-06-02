@@ -58,7 +58,9 @@ console.log(`colors: ${colors}`);
 console.log(`count3: ${count3}`);
 
 let values = [0, 1, 5, 10, 15];
-console.log('values: ${values.sort()}'); // 0, 1, 10, 15, 5  sorts by String value
+delete values[2]; // delete item at index 2
+console.log(`delete values[2]: ${values}`); // 0, 1, 10, 15, 5  sorts by String value
+console.log(`values: ${values.sort()}`); // 0, 1, 10, 15, 5  sorts by String value
 
 function compare(val1, val2) {
   return val1 - val2;
@@ -66,14 +68,14 @@ function compare(val1, val2) {
 
 console.log(`values.sort(compare): ${values.sort(compare)}`); // use comparator function
 
-console.log(`values.concat(-2): ${values.concat(-2)}`); // concat single item
-console.log(`values.concat(45, [20,2]): ${values.concat(45, [20, 2])}`); // concat multiple items
+console.log(`values.concat(-2): ${values.concat(-2)}`);
+console.log(`values.concat(45, [20,2]): ${values.concat(45, [20, 2])}`);
 
 console.log(`values.slice(2): ${values.slice(2)}`); // from index 2
 console.log(`values.slice(1,4): ${values.slice(1, 4)}`); // from index 1 upto and not including 4
 
 // splice returns an array of any items removed
-console.log(`removed from values: ${values.splice(0, 2)}`); // removes first two elements at index 0
+console.log(`removed from values: ${values.splice(0, 2)}`); // removes first two elements
 console.log(`result: ${values}`);
 
 values = [0, 1, 5, 10, 15];
@@ -87,15 +89,12 @@ console.log(`values: ${values}`);
 console.log(`values.indexOf(10): ${values.indexOf(10)}`); // get index of 10
 console.log(`values.lastIndexOf(10): ${values.lastIndexOf(10)}`); // get index of 10
 
-
-delete values[3];
-
-const everyArray = values.every((item, index, array) => // every item must be > 0 to return true
+const everyArray = values.every((item, index) => // every item must be > 0 to return true
 	 item >= 0);
 console.log(`everyArray: ${everyArray}`);
 
-const someArray = values.some((item, index, array) => // some items must be = 10 to return true
-	 item === 10);
+const someArray = values.some((item2, index, array) => // some items must be = 10 to return true
+	 item2 === 10);
 console.log(`someArray: ${someArray}`);
 
 const filterArray = values.filter((item, index, array) => // filter array to contain nums > 10
@@ -107,7 +106,7 @@ const doubleArray = values.map((item, index, array) => // double every item in t
 console.log(`values: ${values}`);
 console.log(`doubleArray: ${doubleArray}`);
 
-values.forEach((item, index, array) => {
+values.forEach((item) => {
   console.log(item);
 });
 

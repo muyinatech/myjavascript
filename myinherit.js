@@ -21,7 +21,7 @@ console.log('y' in q); // y property in q object
 console.log(q.hasOwnProperty('y')); // reurns false a y is an inherited property
 
 const h = { x: 1, y: 2, z: 3 };
-for (l in h) {
+for (let l in h) {
   console.log(l);
 }
 
@@ -29,5 +29,4 @@ console.log(Object.getOwnPropertyDescriptor(o, 'x'));
 Object.defineProperty(o, 'w', { writable: false });
 console.log(Object.getOwnPropertyDescriptor(o, 'w'));
 console.log(o.isPrototypeOf(p));
-console.log(classof(o));
 
