@@ -91,11 +91,11 @@ Object.defineProperty(book, 'ayear', {
 
 
 // object with setter only
-Object.defineProperty(book, 'ref', {
-  set(newValue) {
-    this.ref = newValue;
-  },
-});
+// Object.defineProperty(book, 'ref', {
+//   set(newValue) {
+//     this.ref = newValue;
+//   },
+// });
 
 book.year = 2005;
 console.log(book.edition);
@@ -126,10 +126,10 @@ Object.defineProperties(book, {
 
 console.log(book.title);
 
-const descriptor = Object.getOwnPropertyDescriptor(book, '_title');
-console.log(descriptor.value);
-console.log(descriptor.configurable);
-console.log(typeof descriptor.get);
+// const descriptor = Object.getOwnPropertyDescriptor(book, '_title');
+// console.log(descriptor.value);
+// console.log(descriptor.configurable);
+// console.log(typeof descriptor.get);
 
 function displayInfo(args) {
   if (args.age > 25) {
@@ -156,3 +156,16 @@ console.log(`"z" in p:${'z' in p}`);
 const a = [7, 8, 9];
 console.log(`"0" in a${'0' in a}`);
 console.log(`1 in a${1 in a}`);
+
+const testmap = {
+  'a' : 1,
+  'b' : 2,
+  'c' : 3
+};
+
+const newmap = Object.keys(testmap).map(key => ({
+  name: key,
+  value: testmap[key]
+}));
+
+console.log(newmap);

@@ -30,3 +30,18 @@ const meals = {
   dinner,
 };
 console.log(`meals - ${JSON.stringify(meals)}`);
+
+const person = {
+  name: 'John',
+  age: 50,
+  hometown: 'London'
+};
+
+// copy object & change properties
+const newNamePerson = {
+  ...person,
+  name: 'Bill'
+};
+
+console.log(person);
+console.log(newNamePerson);
