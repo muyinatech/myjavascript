@@ -44,6 +44,9 @@ console.log(num.toString(16)); // "a" base 16
 // let num2;
 // console.log(num2.toString()); // toString will error on null or undefined variable
 
+// Trim whitespace from both sides of a string
+const someString = '   this is   ';
+console.log(someString.trim()+'.');
 
 // String() function
 const value1 = 10;

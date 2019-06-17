@@ -6,7 +6,7 @@ const sandwich = {
   toppings: ['lettuce', 'tomato', 'mustard']
 };
 
-let {bread, meat} = sandwich;
+let {bread, meat} = sandwich; // pulls out bread and meat out of the object and creates local variables for them
 console.log(bread, meat); // wholemeal beef
 bread = 'garlic';
 console.log(bread, meat); // garlic beef

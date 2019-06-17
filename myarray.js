@@ -26,7 +26,7 @@ array3.length = 6;
 array3[5] = 100;
 console.log(`array3.length = 6: ${array3}`); // modify array to have six items
 
-// check if an array preferred
+// check if object is an array (preferred)
 if (Array.isArray(array1)) {
   console.log('array1 is an array');
 }
@@ -86,21 +86,26 @@ values = [0, 10, 1, 5, 10, 15];
 values.splice(2, 1, 5000); // replace item at index 2 with 5000
 console.log(`values: ${values}`);
 
+// Array.indexOf() & Array.lastIndexOf()
 console.log(`values.indexOf(10): ${values.indexOf(10)}`); // get index of 10
 console.log(`values.lastIndexOf(10): ${values.lastIndexOf(10)}`); // get index of 10
 
+// Array.every()
 const everyArray = values.every((item, index) => // every item must be > 0 to return true
 	 item >= 0);
 console.log(`everyArray: ${everyArray}`);
 
+// Array.some()
 const someArray = values.some((item2, index, array) => // some items must be = 10 to return true
 	 item2 === 10);
 console.log(`someArray: ${someArray}`);
 
+// Array.filter()
 const filterArray = values.filter((item, index, array) => // filter array to contain nums > 10
 	 item > 10);
 console.log(`filterArray: ${filterArray}`);
 
+// Arrays.map()
 const doubleArray = values.map((item, index, array) => // double every item in the array
 	 item * 2);
 console.log(`values: ${values}`);
@@ -110,17 +115,18 @@ values.forEach((item) => {
   console.log(item);
 });
 
-
+// Array.reduce()
 const sum = values.reduce(function(prev, cur, index, array) {
 	return prev + cur;
 });
 console.log(`values.reduce: ${sum}`);
 
+// Delete from an array at index
 delete values[3]; // removes item at index 3 and is set to undefined
 console.log(`values: ${values}`);
 
+// 2D array
 const tempByDay = [[72,75,79,79,81,81],[81,79,75,75,73,72]];
-
 // print all the items of the 2D array
 for (let i =0; i < tempByDay.length; i++) {
 	for (let j = 0; j < tempByDay[i].length; j++) {
@@ -141,11 +147,13 @@ for (let i =0; i < tempByDay2.length; i++) {
 
 /** ES6 **/
 
+// Array.includes()
 values = [10,15,3,33,21,10,100,2];
 console.log(`values.includes(15): ${values.includes(15)}`); // ES7 returns true if the element is found in the array
 console.log(`values.includes(10, 3): ${values.includes(10, 3)}`); // ES7 returns true if the element is found in the array from index 3 onwards
 console.log(`values.includes(15, 3): ${values.includes(15, 3)}`); // ES7 returns true if the element is found in the array from index 3 onwards
 
+// Array.forEach()
 console.log('values.forEach');
 values.forEach(x => {
 	console.log(x % 10);
@@ -156,9 +164,9 @@ for (let n of values) {
   console.log(n);
 }
 
-
 const valuesTwo = [1,2,3];
-// Using @@iterator, the Array class has a property named @@iterator introduced in ES6. To use this, we need to access the Symbol.iterator property of the array as follows:-
+/* Using @@iterator, the Array class has a property named @@iterator introduced in ES6. 
+To use this, we need to access the Symbol.iterator property of the array as follows:- */
 let iterator = valuesTwo[Symbol.iterator]();
 console.log(`iterator: ${iterator.next().value}`);
 console.log(`iterator: ${iterator.next().value}`);

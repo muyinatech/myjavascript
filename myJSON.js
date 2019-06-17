@@ -13,3 +13,4 @@ console.log(typeof json); // string
 const backToJs = JSON.parse(json);
 console.log(backToJs);
 console.log(backToJs.a); // 1
+console.log(typeof backToJs); // object

@@ -1,4 +1,6 @@
 var scope = 'global';
+someVariable = 'global'; // without var, variable is explicitly global
+
 function checkscope() {
   const scope = 'local';
   return scope;

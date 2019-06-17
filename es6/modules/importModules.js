@@ -4,6 +4,6 @@ import add from './add';
 
 print('Hello');
 log('logging a message', new Date());
-console.log(somethingElse);
-add();
+log(somethingElse);
+log(add(10, 25));
 

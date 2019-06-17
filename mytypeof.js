@@ -14,11 +14,11 @@ let aVariable3 = null; // recommended to declare a variable to null,
 // if is to hold an object later, instead of leaving undefined
 aVariable3 = {};
 
-console.log(`typeof new Object(): ${typeof aVariable3}`); // object
+console.log(`typeof aVariable3: ${typeof aVariable3}`); // object
 
 console.log(`typeof null: ${typeof null}`); // object, as it considered to be an empty object
 
 const aFunction = () => {};
 console.log(`typeof function: ${typeof aFunction()}`); // function
 
-console.log(`typeof (1 + ""): ${typeof (`${1}`)}`); // string
+console.log(`typeof (1 + ""): ${typeof (1 + "")}`); // string
