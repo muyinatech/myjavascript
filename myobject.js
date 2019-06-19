@@ -3,6 +3,15 @@ const object1 = new Object();
 object1.name = "test";
 console.log("object1:", object1);
 
+// Create object (rarely used) with an object literal
+var aObject = new Object({
+  name: "Chris",
+  age: 38,
+  greeting: function() {
+    alert("Hi! I'm " + this.name + ".");
+  }
+});
+
 // Create object (preferred)
 const foo = {}; // same as new Object();
 console.log("foo:", foo);
@@ -50,14 +59,47 @@ console.log("foo2.bat[2]:", foo2.bat[2]);
 console.log("foo2.baz:", foo2.baz());
 
 // object constructor function
-function customer(first, last, age, eye) {
+function Person(first, last, age, gender, interests) {
+  this.name = {
+    first: first,
+    last: last
+  };
+  this.age = age;
+  this.gender = gender;
+  this.interests = interests;
+  this.bio = function() {
+    alert(
+      this.name.first +
+        " " +
+        this.name.last +
+        " is " +
+        this.age +
+        " years old. He likes " +
+        this.interests[0] +
+        " and " +
+        this.interests[1] +
+        "."
+    );
+  };
+  this.greeting = function() {
+    alert("Hi! I'm " + this.name.first + ".");
+  };
+}
+
+var person1 = new Person("Bob", "Smith", 32, "male", ["music", "skiing"]);
+console.log("person1['age']:", person1["age"]);
+console.log("person1.interests[1]:", person1.interests[1]);
+console.log("person1.bio():", person1.bio());
+
+// object constructor function
+function Customer(first, last, age, eye) {
   this.firstName = first;
   this.lastName = last;
   this.age = age;
   this.eyeColor = eye;
 }
 
-const myFather = new customer("John", "Doe", 50, "blue");
+const myFather = new Customer("John", "Doe", 50, "blue");
 console.log("myFather:", myFather);
 
 // Delete property
@@ -257,5 +299,3 @@ var o = {
 console.log("o.accessor_prop", o.accessor_prop);
 o.accessor_prop = 100;
 console.log("o.accessor_prop", o.accessor_prop);
-
-// Object attributes
