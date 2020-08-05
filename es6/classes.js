@@ -1,3 +1,16 @@
+class Person {
+  constructor() {
+    this.name = 'Fred';
+  }
+
+  printName() {
+    console.log(this.name);
+  }
+}
+
+const person = new Person();
+person.printName();
+
 class Vacation {
   constructor(destination, length) {
     this.destination = destination;
@@ -7,12 +20,10 @@ class Vacation {
   print() {
     console.log(`${this.destination} will take ${this.length} days.`);
   }
-
 }
 
 const trip = new Vacation('Paris, France', 7);
 trip.print();
-
 
 class Expedition extends Vacation {
   constructor(destination, length, gear) {
@@ -24,8 +35,11 @@ class Expedition extends Vacation {
     super.print();
     console.log(`Bring your ${this.gear.join(' and your ')}`);
   }
-
 }
 
-const expedition = new Expedition('Mt Everest', 3, ['camera', 'gloves', 'flask']);
+const expedition = new Expedition('Mt Everest', 3, [
+  'camera',
+  'gloves',
+  'flask',
+]);
 expedition.print();

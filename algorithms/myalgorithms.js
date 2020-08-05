@@ -7,7 +7,7 @@ Given a number N return the index value of the Fibonacci sequence, where the seq
 F(n) = F(n-1) + F(n-2)
  */
 
-function fibonacci(num) {
+const fibonacci = (num) => {
   if (num <= 1) return 1;
 
   return fibonacci(num - 1) + fibonacci(num - 2);
